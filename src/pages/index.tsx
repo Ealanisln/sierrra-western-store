@@ -3,6 +3,7 @@ import { signIn, signOut, useSession } from "next-auth/react";
 import Head from "next/head";
 import { api } from "~/utils/api";
 import Carousel from "~/components/Carousel";
+import Features from "~/components/Features";
 
 const Home: NextPage = () => {
 
@@ -14,6 +15,7 @@ const Home: NextPage = () => {
         <link rel="icon" href="/favicon.ico" />
       </Head>
       <Carousel />
+      <Features />
     </>
   );
 };
