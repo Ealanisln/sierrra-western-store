@@ -7,7 +7,7 @@ const Categories = () => {
   useEffect(() => {
     fetch("https://fakestoreapi.com/products/categories")
       .then((res) => res.json())
-      .then((json) => setCategories(json))
+      .then((json: string[]) => setCategories(json))
       .catch((error) => console.error("Error:", error));
   }, []);
 

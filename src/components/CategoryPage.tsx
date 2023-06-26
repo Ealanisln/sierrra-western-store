@@ -1,5 +1,6 @@
 import { useState, useEffect } from "react";
 import { useRouter } from "next/router";
+import Image from "next/image";
 
 interface Item {
   id: number;
@@ -15,9 +16,9 @@ const CategoryPage = () => {
 
   useEffect(() => {
     if (category) {
-      fetch(`https://fakestoreapi.com/products/category/${category}`)
+      fetch(`https://fakestoreapi.com/products/category/${category.toString()}`)
         .then((res) => res.json())
-        .then((json) => setItems(json))
+        .then((json: Item[]) => setItems(json))
         .catch((error) => console.error("Error:", error));
     }
   }, [category]);
@@ -33,7 +34,7 @@ const CategoryPage = () => {
           >
             <h2 className="text-lg font-semibold text-gray-800">{item.title}</h2>
             <p className="text-gray-600">${item.price}</p>
-            <img src={item.image} alt={item.title} className="mt-4" />
+            <Image src={item.image} alt={item.title} width={300} height={300} />
           </div>
         ))}
       </div>

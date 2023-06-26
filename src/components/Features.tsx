@@ -9,7 +9,7 @@ import {
     Text,
     useColorModeValue,
   } from '@chakra-ui/react';
-  import { ReactElement } from 'react';
+  import type { ReactElement } from 'react';
   import {
     FcAbout,
     FcAssistant,
