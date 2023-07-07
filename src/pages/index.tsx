@@ -1,7 +1,7 @@
 import { type NextPage } from "next";
 import Head from "next/head";
-import Carousel from "~/components/Carousel";
-import Features from "~/components/Features";
+import Carousel from "~/components/ui/Carousel";
+import Features from "~/components/ui/Features";
 
 const Home: NextPage = () => {
 
