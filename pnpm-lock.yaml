@@ -5,6 +5,9 @@ settings:
   excludeLinksFromLockfile: false
 
 dependencies:
+  '@chakra-ui/hooks':
+    specifier: ^2.2.0
+    version: 2.2.0(react@18.2.0)
   '@chakra-ui/icons':
     specifier: ^2.0.19
     version: 2.0.19(@chakra-ui/system@2.5.8)(react@18.2.0)
