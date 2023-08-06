@@ -5,6 +5,8 @@ import { api } from "~/utils/api";
 import "~/styles/globals.css";
 import Layout from "./layout";
 import { ChakraProvider } from "@chakra-ui/react";
+import type { AppProps } from 'next/app'
+import { appWithTranslation } from 'next-i18next'
 
 const MyApp: AppType<{ session: Session | null }> = ({
   Component,
@@ -21,4 +23,4 @@ const MyApp: AppType<{ session: Session | null }> = ({
   );
 };
 
-export default api.withTRPC(MyApp);
+export default api.withTRPC(appWithTranslation(MyApp));
