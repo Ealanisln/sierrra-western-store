@@ -172,8 +172,10 @@ const DesktopSubNav = ({
   label: string;
   href?: string;
   subLabel?: string;
-  t: any;
+  t: (key: string) => string;
 }) => {
+  // Provide a default value (empty string) if subLabel is not provided
+  const translatedSubLabel = subLabel ? t(subLabel) : "";
   return (
     <Link
       href={href ?? "#"} // Handle the optional 'href' prop by providing a default value
@@ -190,10 +192,10 @@ const DesktopSubNav = ({
             _groupHover={{ color: "pink.400" }}
             fontWeight={500}
           >
-            {t(label)} {/* Translate the label */}
+            {t(label)} 
           </Text>
           <Text fontSize={"sm"}>
-            {t(subLabel)} {/* Translate the subLabel */}
+            {t(translatedSubLabel)} 
           </Text>
         </Box>
         <Flex
