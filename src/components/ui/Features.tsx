@@ -25,7 +25,7 @@ import {
     href: string;
   }
   
-  const Card = ({ heading, description, icon, href }: CardProps) => {
+  const Card = ({ heading, description, icon }: CardProps) => {
     return (
       <Box
         maxW={{ base: 'full', md: '275px' }}
