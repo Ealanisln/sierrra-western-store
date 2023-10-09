@@ -11,7 +11,8 @@ import {
 // Here we have used react-icons package for the icons
 import { BiLeftArrowAlt, BiRightArrowAlt } from "react-icons/bi";
 // And react-slick as our Carousel Lib
-import Slider from 'react-slick';
+import Slider from "react-slick";
+import Link from "next/link";
 
 // Settings for the slider
 const settings = {
@@ -28,6 +29,7 @@ const settings = {
 
 interface Card {
   title: string;
+  url: string;
   text: string;
   image: string;
 }
@@ -46,19 +48,22 @@ export default function CaptionCarousel() {
   // This can be static or loaded from a server
   const cards: Card[] = [
     {
-      title: "Design Projects 1",
+      title: "Categories",
+      url: "./categories",
       text: "The project board is an exclusive resource for contract work. It's perfect for freelancers, agencies, and moonlighters.",
       image:
         "https://images.unsplash.com/photo-1516796181074-bf453fbfa3e6?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1yZWxhdGVkfDV8fHxlbnwwfHx8fA%3D%3D&auto=format&fit=crop&w=900&q=60",
     },
     {
-      title: "Design Projects 2",
+      title: "Mens clothing",
+      url: "./categories",
       text: "The project board is an exclusive resource for contract work. It's perfect for freelancers, agencies, and moonlighters.",
       image:
         "https://images.unsplash.com/photo-1438183972690-6d4658e3290e?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=2274&q=80",
     },
     {
       title: "Design Projects 3",
+      url: "./categories",
       text: "The project board is an exclusive resource for contract work. It's perfect for freelancers, agencies, and moonlighters.",
       image:
         "https://images.unsplash.com/photo-1507237998874-b4d52d1dd655?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1yZWxhdGVkfDR8fHxlbnwwfHx8fA%3D%3D&auto=format&fit=crop&w=900&q=60",
@@ -133,7 +138,7 @@ export default function CaptionCarousel() {
                 transform="translate(0, -50%)"
               >
                 <Heading fontSize={{ base: "3xl", md: "4xl", lg: "5xl" }}>
-                  {card.title}
+                  <Link href="./categories">{card.title}</Link>
                 </Heading>
                 <Text fontSize={{ base: "md", lg: "lg" }} color="GrayText">
                   {card.text}
