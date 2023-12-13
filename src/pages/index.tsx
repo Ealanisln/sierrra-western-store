@@ -4,7 +4,6 @@ import Carousel from "~/components/ui/Carousel";
 import Features from "~/components/ui/Features";
 
 const Home: NextPage = () => {
-
   return (
     <>
       <Head>

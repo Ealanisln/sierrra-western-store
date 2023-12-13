@@ -8,6 +8,8 @@ import {
 // import DiscordProvider from "next-auth/providers/discord";
 // import { env } from "~/env.mjs";
 import { prisma } from "~/server/db";
+import GitHubProvider from "next-auth/providers/github";
+
 
 /**
  * Module augmentation for `next-auth` types. Allows us to add custom properties to the `session`
@@ -47,10 +49,10 @@ export const authOptions: NextAuthOptions = {
   },
   adapter: PrismaAdapter(prisma),
   providers: [
-    // DiscordProvider({
-    //   clientId: env.DISCORD_CLIENT_ID,
-    //   clientSecret: env.DISCORD_CLIENT_SECRET,
-    // }),
+    GitHubProvider({
+      clientId: process.env.GITHUB_ID || '',
+      clientSecret: process.env.GITHUB_SECRET || ''
+    })
     /**
      * ...add more providers here.
      *

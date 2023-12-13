@@ -21,6 +21,7 @@ import {
   ChevronDownIcon,
   ChevronRightIcon,
 } from "@chakra-ui/icons";
+import LoginBtn from "../LoginBtn";
 
 export default function WithSubnavigation() {
   const { isOpen, onToggle } = useDisclosure();
@@ -75,7 +76,7 @@ export default function WithSubnavigation() {
             variant={"link"}
             href={"#"}
           >
-            Sign In
+            <LoginBtn />
           </Button>
           <Button
             as={"a"}
